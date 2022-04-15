@@ -1,0 +1,4 @@
+#!/bin/bash
+exec pkill -U $USER
+exec sudo systemctl start display-manager
+exec sudo chvt 1
