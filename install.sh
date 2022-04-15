@@ -3,8 +3,9 @@ echo "Installing deckifier, hang tight!"
 read -p "Please make sure that you have multilib repository enabled, yay and git installed, then press enter to continue."
 sudo pacman -Sy steam
 echo "Steam is installed. Running it for checking updates."
-steam
 read -p "Once it's done, close it and don't log in. After closing, press enter to continue."
+steam
+read -p "Steam update finished, close it and press enter to continue."
 echo "Installing Mangohud and Steam Deck files."
 yay -S mangohud
 sudo cp etc /etc
