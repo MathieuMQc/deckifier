@@ -14,5 +14,4 @@ sudo pacman -S glew glfw glfw-x11
 read -p "File copying done, after pressing enter, SteamDeck UI in windowed mode will appear, which will update your client to latest version, if polkit daemons ask you for authorization, enter your password and continue, now may log into your account."
 steam -steamos3 -steampal -steamdeck -gamepadui
 read -p "Once you finish, press enter to finish installation"
-echo "Now you may start SteamOS session directly from your display manager options, choose SteamOS "(gamescope)" in login options and enter your password."
-fi
+echo "Now you may start SteamOS session directly from your display manager options, choose SteamOS in login options and enter your password."
