@@ -11,8 +11,9 @@ Bugs: currently i don't know how to enable battery status for laptops, global FS
 Installation:
 Before installing, make sure multilib repository is enabled in /etc/pacman.conf, yay and git installed.
 
-Open terminal inside this directory and type:
+Open terminal, clone this repository, go inside this directory and type:
 ```
+chmod +x install.sh
 ./install.sh
 ```
  
