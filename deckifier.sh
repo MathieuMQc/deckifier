@@ -26,11 +26,22 @@ help() {
     echo -e "$0 --install       Starts the installation"
 }
 
+# check if you're even running Arch Linux (with yay) in the first place by checking if pacman and yay available
+archcheck() {
+    #shellcheck disable=SC1014,SC2050,SC2057
+    if [ command -v pacman ] && [ command -v yay ]; then
+        deckifierinstall
+    else
+        echo -e "${red}pacman and yay wasn't found! are you running Arch Linux?${reset}"
+    fi
+}
+
 # This is basically a modified version of the initial script
 # It's likely where you want to make changes and additions
 # The function only gets called if the script gets executed with --install
 # I haven't yet found a way to check for enabled repositories either, maybe you could grep the config file to see if multilib is commented or not?
 deckifierinstall() {
+    archcheck
     echo -e " ${green}Installing deckifier, hang tight!"
     read -p -r "Please make sure the Multilib repository is enabled, otherwise, the installation will fail!"
     sudo pacman -Sy steam gamescope jq dmidecode
@@ -46,16 +57,6 @@ deckifierinstall() {
     sudo pacman -S glew glfw-x11
     echo -e "${green}Installation complete, now you can run the following or select the \"SteamOS\" session in your Display Manager"
     echo -e "${reset}Command to run Steam Deck UI: steam -steamos3 -steampal -steamdeck -gamepadui"
-}
-
-# check if you're even running Arch Linux (with yay) in the first place by checking if pacman and yay available
-archcheck() {
-    #shellcheck disable=SC1014,SC2050,SC2057
-    if [ command -v pacman ] && [ command -v yay ]; then
-        deckifierinstall
-    else
-        echo -e "${red}pacman and yay wasn't found! are you running Arch Linux?${reset}"
-    fi
 }
 
 if [ -n "$1" ]; then
