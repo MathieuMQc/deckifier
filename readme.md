@@ -8,7 +8,7 @@ This adds all of the required SteamOS dependencies, as well as everything needed
 
 ## Known Bugs/issues: 
 
-- Battery status doesn't work
+- Battery status doesn't work on some devices
 - global FSR doesn't work (normal due to mesa/linux doesn't support that by default)
 
 <div style="font-size: 12px;color: grey;">

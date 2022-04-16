@@ -43,7 +43,7 @@ deckifierinstall() {
     sudo cp -r "{etc, usr}" "/"
     sudo chmod 0644 /usr/share/polkit-1/actions/org.val*
     sudo chmod +x "/usr/bin/{jupiter*, steamos*, mangoapp*, gamescope-session*, steamos-polkit-helpers/*}"
-    sudo pacman -S glew glfw-wayland
+    sudo pacman -S glew glfw-x11
     echo -e "${green}Installation complete, now you can run the following or select the \"SteamOS\" session in your Display Manager"
     echo -e "${reset}Command to run Steam Deck UI: steam -steamos3 -steampal -steamdeck -gamepadui"
 }
