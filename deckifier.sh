@@ -26,28 +26,22 @@ help() {
     echo -e "$0 --install       Starts the installation"
 }
 
+# This is basically a modified version of the initial script
+# It's likely where you want to make changes and additions
+# The function only gets called if the script gets executed with --install
+# I haven't yet found a way to check for enabled repositories either, maybe you could grep the config file to see if multilib is commented or not?
 deckifierinstall() {
     echo -e " ${green}Installing deckifier, hang tight!"
-    # read -p "Please make sure that you have multilib repository enabled, yay and git installed, then press enter to continue."
     read -p -r "Please make sure the Multilib repository is enabled, otherwise, the installation will fail!"
     sudo pacman -Sy steam gamescope jq dmidecode
     echo "Steam is installed. Running it for checking updates."
-    read -p -r "Once it's done, close it and don't log in. After closing, press enter to continue."
+    read -p -r "Once it's done, close it and don't log in. After closing, press [ENTER] to continue."
     steam
-    read -p -r "Steam update finished, close it and press enter to continue."
-    echo "Installing Mangohud and Steam Deck files."
-    yay -S mangohud
-    # shortened this to what it is below
-    # sudo cp -r etc /
-    # sudo cp -r usr /
+    read -p -r "Steam update finished, close it and press [ENTER] to continue."
+    echo -e "${green}Installing Mangohud and Steam Deck files."
+    yay -Sa mangohud
     sudo cp -r "{etc, usr}" "/"
     sudo chmod 0644 /usr/share/polkit-1/actions/org.val*
-    # shortened this too
-    # sudo chmod +x /usr/bin/jupiter*
-    # sudo chmod +x /usr/bin/steamos*
-    # sudo chmod +x /usr/bin/mangoapp
-    # sudo chmod +x /usr/bin/gamescope-session
-    # sudo chmod +x /usr/bin/steamos-polkit-helpers/*
     sudo chmod +x "/usr/bin/{jupiter*, steamos*, mangoapp*, gamescope-session*, steamos-polkit-helpers/*}"
     sudo pacman -S glew glfw-wayland
     echo -e "${green}Installation complete, now you can run the following or select the \"SteamOS\" session in your Display Manager"

@@ -11,6 +11,12 @@ This adds all of the required SteamOS dependencies, as well as everything needed
 - Battery status doesn't work
 - global FSR doesn't work (normal due to mesa/linux doesn't support that by default)
 
+<div style="font-size: 12px;color: grey;">
+Global FSR Note:
+
+You can install SteamOS3 Mesa and linux-neptune, though, that is unsupported by this script.
+</div>
+
 <!-- old readme bugs list -->
 <!-- currently i don't know how to enable battery status for laptops, global FSR doesn't work (intended behavior, since extra/mesa and core/linux kernel doesn't support that. You may install SteamOS3 mesa and linux-neptune later if you want to try it) -->
 
@@ -29,3 +35,4 @@ chmod +x install.sh
 ./deckifier.sh --install
 ```
 you can also do --help instead to see a small summary of available options
+
