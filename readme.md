@@ -6,10 +6,16 @@ This repository aims to add required SteamDeck's holo packages and binaries such
 
 This adds all of the required SteamOS dependencies, so the things such as shader pre-caching downloading, FPS;TDP;GPU clock limiting, flyouts, update daemon, performance overlay works as intended!
 
-Bugs: currently i don't know how to enable battery status for laptops, global FSR doesn't work (intended behavior, since extra/mesa and core/linux kernel doesn't support that. You may install SteamOS3 mesa and linux-neptune later if you want to try it)
+Bugs: 
+
+- Battery status doesn't work
+- global FSR doesn't work (normal due to mesa/linux doesn't support that by default)
+
+<!-- currently i don't know how to enable battery status for laptops, global FSR doesn't work (intended behavior, since extra/mesa and core/linux kernel doesn't support that. You may install SteamOS3 mesa and linux-neptune later if you want to try it) -->
 
 Installation:
 Before installing, make sure multilib repository is enabled in /etc/pacman.conf, yay and git installed.
+the installation will fail otherwise!
 
 Open terminal, clone this repository, go inside this directory and type:
 ```
