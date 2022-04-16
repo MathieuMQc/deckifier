@@ -16,7 +16,17 @@ uline="\e[4m"
 # shellcheck disable=SC2034
 reset="\e[0m"
 
-deckifierinstall () {
+help() {
+    echo -e "${bold}Deck-ifier${reset}"
+    echo -e "${italic}SteamOS bits for Arch Linux and it's forks${reset}"
+    echo -e "Using this, you can get almost everything that SteamOS on the Steam Deck has to offer on any Arch Linux installation"
+    printf "\n"
+    echo "Syntax:"
+    echo -e "$0 --help          Brings up this help page"
+    echo -e "$0 --install       Starts the installation"
+}
+
+deckifierinstall() {
     echo -e " ${green}Installing deckifier, hang tight!"
     # read -p "Please make sure that you have multilib repository enabled, yay and git installed, then press enter to continue."
     read -p -r "Please make sure the Multilib repository is enabled, otherwise, the installation will fail!"
@@ -39,13 +49,13 @@ deckifierinstall () {
     # sudo chmod +x /usr/bin/gamescope-session
     # sudo chmod +x /usr/bin/steamos-polkit-helpers/*
     sudo chmod +x "/usr/bin/{jupiter*, steamos*, mangoapp*, gamescope-session*, steamos-polkit-helpers/*}"
-    sudo pacman -S glew glfw-wayland 
+    sudo pacman -S glew glfw-wayland
     echo -e "${green}Installation complete, now you can run the following or select the \"SteamOS\" session in your Display Manager"
     echo -e "${reset}Command to run Steam Deck UI: steam -steamos3 -steampal -steamdeck -gamepadui"
 }
 
 # check if you're even running Arch Linux (with yay) in the first place by checking if pacman and yay available
-archcheck () {
+archcheck() {
     #shellcheck disable=SC1014,SC2050,SC2057
     if [ command -v pacman ] && [ command -v yay ]; then
         deckifierinstall
@@ -53,3 +63,17 @@ archcheck () {
         echo -e "${red}pacman and yay wasn't found! are you running Arch Linux?${reset}"
     fi
 }
+
+if [ -n "$1" ]; then
+    case "$1" in
+    --install)
+        deckifierinstall
+        ;;
+    --help)
+        help
+        ;;
+    esac
+    shift
+else
+    gui
+fi
