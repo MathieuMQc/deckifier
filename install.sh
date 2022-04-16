@@ -18,7 +18,7 @@ reset="\e[0m"
 
 help() {
     echo -e "${bold}Deck-ifier${reset}"
-    echo -e "${italic}SteamOS bits for Arch Linux and it's forks${reset}"
+    echo -e "SteamOS bits for Arch Linux and it's forks"
     echo -e "Using this, you can get almost everything that SteamOS on the Steam Deck has to offer on any Arch Linux installation"
     printf "\n"
     echo "Syntax:"
