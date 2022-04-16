@@ -8,7 +8,7 @@ steam
 read -p "Steam update finished, close it and press enter to continue."
 echo "Installing Mangohud and Steam Deck files."
 yay -S mangohud
-sudo cp etc /etc
-sudo cp usr /usr
+sudo cp etc /
+sudo cp usr /
 sudo pacman -S glew glfw glfw-x11
 read -p "Installation complete, now you can run steam -steamos3 -steampal -steamdeck -gamepadui or logout to your display manager and select SteamOS Session"
