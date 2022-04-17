@@ -15,7 +15,7 @@ This adds all of the required SteamOS dependencies, as well as everything needed
 <div style="font-size: 12px;color: grey;">
 Global FSR Note:
 
-You can install SteamOS3 Mesa and linux-neptune, though, that is unsupported by this script.
+You can install SteamOS3 Mesa and linux-neptune, from aur if you need it. Just run `yay -S linux-steamos linux-steamos-headers mesa-steamos`, then reboot using new kernel
 </div>
 
 <!-- old readme bugs list -->
