@@ -1,8 +1,8 @@
 # Deck-ifier
 
-***SteamOS session on any Arch-based distro!***
+***SteamOS session on any debian-based distro!***
 
-This repository aims to add required SteamDeck's holo packages and binaries such as `steamos-update, jupiter-biosupdate, steamosatomupd`, the Gamescope Wayland session and other required components to Arch Linux
+This repository aims to add required SteamDeck's holo packages and binaries such as `steamos-update, jupiter-biosupdate, steamosatomupd`, the Gamescope Wayland session and other required components to Debian and presumably, Ubuntu!
 
 This adds all of the required SteamOS dependencies, as well as everything needed for shader pre-cache downloading, FPS;TDP;GPU clock limiting, flyouts, update daemon, performance overlay and so on
 
@@ -11,19 +11,19 @@ This adds all of the required SteamOS dependencies, as well as everything needed
 - Battery status doesn't work on some devices
 - global FSR doesn't work (normal due to mesa/linux doesn't support that by default)
 - Most times switching to desktop might not be correct, cycle thru tty shells until display manager appears
+- in-Steam overlay might not work
 - Probably more which isn't documented here
 
 <div style="font-size: 12px;color: grey;">
 Global FSR Note:
-
-You can install SteamOS3 Mesa and linux-neptune, though, that is unsupported by this script.
+There is no known workaround for debian-based distributions
 </div>
 
 <!-- old readme bugs list -->
 <!-- currently i don't know how to enable battery status for laptops, global FSR doesn't work (intended behavior, since extra/mesa and core/linux kernel doesn't support that. You may install SteamOS3 mesa and linux-neptune later if you want to try it) -->
 
 ## Pre-requisites
-Before installing, make sure the `multilib` repository is enabled in /etc/pacman.conf and that you [have `yay` installed](https://github.com/Jguer/yay#installation).
+Before installing, make your system is up to date.
 
 **the installation will fail otherwise!**
 
@@ -31,7 +31,7 @@ Before installing, make sure the `multilib` repository is enabled in /etc/pacman
 
 Open a Terminal and do the following:
 ```
-git clone https://github.com/bhaiest/deckifier.git
+git clone https://github.com/bhaiest/deckifier.git -b deb
 cd deckifier
 chmod +x install.sh
 ./deckifier.sh --install
