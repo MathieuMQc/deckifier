@@ -55,7 +55,7 @@ deckifierinstall() {
     steam
     read -p -r "Steam update finished, close it and press [ENTER] to continue."
     echo -e "${green}Installing Mangohud and Steam Deck files."
-    yay -Sa mangohud
+    yay -S mangohud
     sudo cp -r "{etc, usr}" "/"
     sudo chmod 0644 /usr/share/polkit-1/actions/org.val*
     sudo chmod +x "/usr/bin/{jupiter*, steamos*, mangoapp*, gamescope-session*, steamos-polkit-helpers/*}"
