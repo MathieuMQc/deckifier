@@ -36,13 +36,18 @@ archcheck() {
     fi
 }
 
+steampaldesktopfile() {
+    cp "./steampal.desktop" "$HOME/.local/share/applications/"
+    echo "${green}successfully copied file${reset}"
+}
+
 # This is basically a modified version of the initial script
 # It's likely where you want to make changes and additions
 # The function only gets called if the script gets executed with --install
 # I haven't yet found a way to check for enabled repositories either, maybe you could grep the config file to see if multilib is commented or not?
 deckifierinstall() {
     archcheck
-    echo -e " ${green}Installing deckifier, hang tight!"
+    echo -e " ${green}Installing deckifier, hang tight!${reset}"
     read -p -r "Please make sure the Multilib repository is enabled, otherwise, the installation will fail!"
     sudo pacman -Sy steam gamescope jq dmidecode
     echo "Steam is installed. Running it for checking updates."
@@ -69,6 +74,6 @@ if [ -n "$1" ]; then
         ;;
     esac
     shift
-else
-    gui
 fi
+
+echo -e "${green}Installation complete, now you can run the following or select the \"SteamOS\" session in your Display Manager"
